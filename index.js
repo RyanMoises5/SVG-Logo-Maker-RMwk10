@@ -1,5 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const { join } = require('path');
 const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
 inquirer.registerPrompt('maxlength-input', require('inquirer-maxlength-input-prompt'));
@@ -59,9 +60,9 @@ function writeToFile(fileName, input) {
 
     svg += `
     
-    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" fill="#${input.color}">${input.text}</text>
-    
-    </svg>`;
+    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" font-style="italic" fill="#${input.color}">${input.text}</text>`;
+
+    svg += '</svg>';
 
     fs.writeFile(
       fileName,
@@ -107,7 +108,7 @@ async function main() {
     // Gathers hex color code from user or translate keyword into hex color code
     let colorHexShape = await getHex(shape);        
 
-    // Consolidates user inputs and hex codes into one input object
+    // Consolidates user inputs and hex codes into one object
     const input = {
         text: text.item,
         color: colorHex,
@@ -115,7 +116,6 @@ async function main() {
         shapeColor: colorHexShape
     };
 
-    // Generates SVG file using properties stored in input object
     writeToFile('logo.svg', input);
 }
 

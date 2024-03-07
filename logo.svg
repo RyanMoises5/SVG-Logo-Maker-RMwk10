@@ -2,6 +2,4 @@
     
     <circle cx="150" cy="100" r="80" fill="#FFFF00" />
     
-    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" fill="#FF0000">278</text>
-    
-    </svg>
+    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" font-style="italic" fill="#FF0000">278</text></svg>
