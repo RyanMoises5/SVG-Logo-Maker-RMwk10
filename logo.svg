@@ -1,5 +1,7 @@
 <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
     
-    <circle cx="150" cy="100" r="80" fill="#FFFF00" />
+    <rect width="150" height="150" x="75" y="25" fill="#EEE8AA" />
     
-    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" font-style="italic" fill="#FF0000">278</text></svg>
+    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" fill="#008000">777</text>
+    
+    </svg>
