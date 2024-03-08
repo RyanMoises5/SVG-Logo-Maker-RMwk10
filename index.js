@@ -2,6 +2,8 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
+// Module that limits input text to max length pre-set by the developer
+
 inquirer.registerPrompt('maxlength-input', require('inquirer-maxlength-input-prompt'));
 
 // Gathers user's preferred color hex code or translates a keyword into a hex code
@@ -39,6 +41,8 @@ const colorChoices = ['Other (Use Hex)','Red','Green','Yellow','Blue','Purple','
 
 function writeToFile(fileName, input) {
 
+    // Builds string for svg code
+
     let svg = 
     `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
     
@@ -62,6 +66,8 @@ function writeToFile(fileName, input) {
     <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" fill="#${input.color}">${input.text}</text>
     
     </svg>`;
+
+    // Writes code for SVG file based on user inputs
 
     fs.writeFile(
       fileName,
@@ -117,5 +123,7 @@ async function main() {
 
     writeToFile('logo.svg', input);
 }
+
+// Initialize app
 
 main();
