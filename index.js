@@ -1,6 +1,5 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { join } = require('path');
 const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
 inquirer.registerPrompt('maxlength-input', require('inquirer-maxlength-input-prompt'));
@@ -26,7 +25,7 @@ const getHex = async (e) => {
         } else if (e.color === 'Blue') {
             return '0000FF'
         } else if (e.color === 'Purple') {
-            return 	'800080'
+            return '800080'
         } else if (e.color ==='Orange') {
             return 'FFA500'
         } else if (e.color ==='White') {
@@ -60,9 +59,9 @@ function writeToFile(fileName, input) {
 
     svg += `
     
-    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" font-style="italic" fill="#${input.color}">${input.text}</text>`;
-
-    svg += '</svg>';
+    <text x="150" y="125" text-anchor="middle" font-size="60" font-weight="bold" fill="#${input.color}">${input.text}</text>
+    
+    </svg>`;
 
     fs.writeFile(
       fileName,
